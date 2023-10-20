@@ -38,7 +38,7 @@ function reactVirtualized() {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: `/long-list-form-react-challenge-project/`,
+  base: '/long-list-form-react-challenge-project/',
   plugins: [react(), svgr(), svgLoader(), reactVirtualized(), vitePluginRequire.default()],
   resolve: {
     alias: {
