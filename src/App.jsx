@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchUsers } from '@slices/usersSlice';
 import { MainLayout } from '@layouts/mainLayout';
@@ -8,8 +8,6 @@ import UsersPage from './pages/users/UsersPage';
 import styles from './app.module.scss';
 import { NotFound } from './pages/notFound';
 
-const BASENAME = '/long-list-form-react-challenge-project/';
-
 function App() {
   const dispatch = useDispatch();
 
@@ -17,15 +15,15 @@ function App() {
     dispatch(fetchUsers());
   }, [dispatch]);
   return (
-    <BrowserRouter basename={BASENAME}>
+    <HashRouter>
       <MainLayout className={styles.app}>
         <Routes>
           <Route path='/' exact element={<StatisticsPage />} />
-          <Route path='/users/' element={<UsersPage />} />
+          <Route path='/users' element={<UsersPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </MainLayout>
-    </BrowserRouter>
+    </HashRouter>
 
   );
 }

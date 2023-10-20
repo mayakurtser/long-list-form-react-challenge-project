@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import classnames from 'classnames';
 import colors from '@common/styles/colors.module.scss';
 import Logo from '@common/assets/logos/il.svg?react';
@@ -13,8 +13,6 @@ const propTypes = {
 };
 const TopBar = ({ className }) => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <div className={classnames(classes.topBar, className)}>
       <Logo className={classes.logo} />
