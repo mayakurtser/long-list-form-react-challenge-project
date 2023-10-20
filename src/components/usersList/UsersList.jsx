@@ -67,7 +67,6 @@ const UsersList = () => {
 
   const handleChange = useCallback((e, index, field) => {
     const value = DOMPurify.sanitize(e.target?.value || e.value);
-    console.log(value);
     let error = false;
     const empty = !value || value === '';
 
