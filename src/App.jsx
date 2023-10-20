@@ -7,6 +7,8 @@ import { fetchUsers } from '@slices/usersSlice';
 import { MainLayout } from '@layouts/mainLayout';
 import styles from './app.module.scss';
 
+const BASENAME = '/long-list-form-react-challenge-project/';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -14,11 +16,11 @@ function App() {
     dispatch(fetchUsers());
   }, [dispatch]);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={BASENAME}>
       <MainLayout className={styles.app}>
         <Routes>
           <Route path='/' exact element={<StatisticsPage />} />
-          <Route path='/users' exact element={<UsersPage />} />
+          <Route path='/users/' exact element={<UsersPage />} />
           <Route path='*' exact element={<StatisticsPage />} />
         </Routes>
       </MainLayout>
