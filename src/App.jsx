@@ -6,7 +6,7 @@ import { MainLayout } from '@layouts/mainLayout';
 import StatisticsPage from './pages/statistics/StatisticsPage';
 import UsersPage from './pages/users/UsersPage';
 import styles from './app.module.scss';
-import { NotFound } from './pages/notFound/';
+import { NotFound } from './pages/notFound';
 
 const BASENAME = '/long-list-form-react-challenge-project/';
 
