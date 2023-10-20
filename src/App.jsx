@@ -18,7 +18,8 @@ function App() {
       <MainLayout className={styles.app}>
         <Routes>
           <Route path='/' exact element={<StatisticsPage />} />
-          <Route path='users' element={<UsersPage />} />
+          <Route path='/users' exact element={<UsersPage />} />
+          <Route path='*' exact element={<StatisticsPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
